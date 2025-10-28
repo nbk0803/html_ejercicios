@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Formulario de Pedidos</title>
+  <meta charset="UTF-8">
+  <title>Formulario Dinámico con Validación</title>
 </head>
 <body>
-    <h2>Pedido de Comidas</h2>
-    
-    <form id="form">
-        <div id="container">
-            <div class="grupo">
-                <p><b>Persona 1</b></p>
-                <label for="nombre1">Nombre:</label>
-                <input type="text" id="nombre1" name="nombre[]" required>
-                <br><br>
-                
-                <label for="tipo1">Tipo:</label>
-                <select id="tipo1" name="tipo[]" onchange="cambiar(this)" required>
-                    <option value="">Seleccione</option>
-                    <option value="desayuno">Desayuno</option>
-                    <option value="almuerzo">Almuerzo</option>
-                    <option value="cena">Cena</option>
-                </select>
-                <br><br>
-                
-                <div class="opciones" style="display:none">
-                    <label for="plato1">Plato:</label>
-                    <select id="plato1" name="plato[]" disabled></select>
-                    <br><br>
-                    
-                    <label for="horario1">Horario:</label>
-                    <select id="horario1" name="horario[]" disabled></select>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
-    </body>
+
+  <h2>Formulario de Comidas</h2>
+
+  <form id="registrationForm">
+    <label for="tipoComida">Tipo de comida:</label>
+    <select id="tipoComida" name="tipoComida" required onchange="mostrarOpciones()">
+      <option value="">Selecciona...</option>
+      <option value="desayuno">Desayuno</option>
+      <option value="almuerzo">Almuerzo</option>
+      <option value="cena">Cena</option>
+    </select>
+
+    <br><br>
+
+    <div id="menuOpciones"></div>
+    <br>
+    <div id="horarios"></div>
+    <br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script src="../Js/script-formulario_dinamico.js"></script>
+
+</body>
 </html>
